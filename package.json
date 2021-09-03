@@ -1,0 +1,33 @@
+{
+  "name": "eslint-config-webiq",
+  "version": "1.0.0",
+  "description": "> **Note**: This styleguide only covers React components and Redux state management and effects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webiq/react.styleguide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webiq/react.styleguide/issues"
+  },
+  "peerDependencies": {
+    "eslint": ">= 3"
+  },
+  "homepage": "https://github.com/webiq/react.styleguide#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-fp-ts": "^0.2.1",
+    "eslint-plugin-functional": "^3.7.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-native": "^3.11.0"
+  }
+}

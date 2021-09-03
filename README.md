@@ -4,6 +4,7 @@
 ## Table of Contents
   1. [Programming style](#programming-style)
   2. [Side effects](#side-effects)
+  3. [Method chaining](#method-chaining)
 
 ## Programming Style
 The functional programming paradigma should be applied to all front-end code.

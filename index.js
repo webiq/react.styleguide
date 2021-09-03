@@ -70,21 +70,11 @@ module.exports = {
 		 */
 		{
 			files: [
-				'src/sagas/*.ts',
 				'src/actions/**/*.ts',
 				'src/**/*.test.{ts,tsx}',
 			],
 			rules: {
 				'functional/functional-parameters': [0],
-			},
-		},
-
-		{
-			files: [
-				'src/sagas/*.ts',
-			],
-			rules: {
-				'@typescript-eslint/explicit-module-boundary-types': [0],
 			},
 		},
 
@@ -120,11 +110,6 @@ module.exports = {
 			},
 		},
 	],
-	root: true,
-	parser: '@typescript-eslint/parser',
-	parserOptions: {
-		project: './tsconfig.json',
-	},
 	extends: [
 		'eslint:recommended',
 		'plugin:prettier/recommended',
