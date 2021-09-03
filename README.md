@@ -151,3 +151,29 @@ const data: unknown = getDataFromExternalDataSource()
 
 User.decode(data) // returns an Either with a user or an error
 ```
+
+## Component structure
+Every component should have its own folder.
+
+```
+project
+│ README.md
+│
+└───components
+│   │
+│   └───header
+│       │   index.ts
+│       │   Header.tsx
+│       │   SimpleHeader.tsx
+│       │   style.ts
+```
+
+The file `index.ts` exports all the components, so they can be easily imported elsewhere.
+```
+import Header from './Header'
+import SimpleHeader from './SimpleHeader'
+
+export { Header, SimpleHeader }
+```
+
+The file `style.ts` contains all styling related code.
