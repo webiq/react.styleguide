@@ -63,6 +63,22 @@ module.exports = {
 
 		'no-console': [1],
 		'no-undefined': [2],
+
+		'prettier/prettier': [
+			'error',
+			{
+				trailingComma: 'all',
+				semi: false,
+				singleQuote: true,
+				useTabs: true,
+				jsxSingleQuote: false,
+				bracketSpacing: true,
+				jsxBracketSameLine: false,
+				arrowParens: 'always',
+				quoteProps: 'consistent',
+				proseWrap: 'always',
+			},
+		],
 	},
 	'overrides': [
 		/**
@@ -109,22 +125,6 @@ module.exports = {
 				'functional/no-conditional-statement': [0],
 			},
 		},
-
-		'prettier/prettier': [
-			'error',
-			{
-				trailingComma: 'all',
-				semi: false,
-				singleQuote: true,
-				useTabs: true,
-				jsxSingleQuote: false,
-				bracketSpacing: true,
-				jsxBracketSameLine: false,
-				arrowParens: 'always',
-				quoteProps: 'consistent',
-				proseWrap: 'always',
-			},
-		],
 	],
 	extends: [
 		'eslint:recommended',
