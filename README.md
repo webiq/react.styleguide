@@ -22,6 +22,7 @@ module.exports = {
   3. [Method chaining](#method-chaining)
   4. [React components](#react-components)
   5. [React props](#react-props)
+  6. [Selectors](#selectors)
 
 ## Programming Style
 The functional programming paradigma should be applied to all front-end code.
@@ -70,7 +71,7 @@ const result = pipe(
 )
 ```
 
-## React component
+## React components
 React components should always be a function component.
 
 ```typescript
@@ -98,7 +99,7 @@ const Hello: React.FC<HelloProps> = (props) => (
 ```
 
 When passing an entity (like a product) to a component, don't pass every property with a spread operator but pass the complete entity.
-```
+```typescript
 // wrong
 <ProductCard {...product} />
 
@@ -107,10 +108,27 @@ When passing an entity (like a product) to a component, don't pass every propert
 ```
 
 When using callbacks and events, always start the property name with `on`, for example `onClick`
-```
+```typescript
 // wrong
 <Button click={() => {}} />
 
 // good
 <Button onClick={() => {}} />
+```
+
+## Selectors
+Use the package [reselect](https://github.com/reduxjs/reselect) for writing selectors.
+Every selector should return an [Option](https://gcanti.github.io/fp-ts/modules/Option.ts.html).
+
+Example:
+```typescript
+import { createSelector } from 'reselect'
+import { Option } from 'fp-ts/Option'
+
+export type Selector<R> = ReselectSelector<AppState, Option<R>>
+
+// this selector returns a Option that could be true or false
+const selector: Selector<boolean> = createSelector(
+	...
+)
 ```
