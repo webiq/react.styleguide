@@ -24,6 +24,7 @@ module.exports = {
   5. [React props](#react-props)
   6. [Selectors](#selectors)
   7. [External data](#external-data)
+  8. [Component structure](#component-structure)
 
 ## Programming Style
 The functional programming paradigma should be applied to all front-end code.
@@ -169,7 +170,7 @@ project
 ```
 
 The file `index.ts` exports all the components, so they can be easily imported elsewhere.
-```
+```typescript
 import Header from './Header'
 import SimpleHeader from './SimpleHeader'
 
