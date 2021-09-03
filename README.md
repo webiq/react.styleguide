@@ -1,6 +1,21 @@
 # React StyleGuide 💅
 > **Note**: This styleguide only covers React components and Redux state management and effects.
 
+Install this styleguide by adding the following line to your package.json
+```diff
+"dependencies": {
++  "eslint-config-webiq": "git+ssh://git@github.com/webiq/react.styleguide.git",
+}
+```
+After installating this package you can add this config to the *extends* array:
+```diff
+module.exports = {
+    extends: [
++        'eslint-config-webiq'
+    ]
+}
+```
+
 ## Table of Contents
   1. [Programming style](#programming-style)
   2. [Side effects](#side-effects)
