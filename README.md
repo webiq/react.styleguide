@@ -20,6 +20,8 @@ module.exports = {
   1. [Programming style](#programming-style)
   2. [Side effects](#side-effects)
   3. [Method chaining](#method-chaining)
+  4. [React components](#react-components)
+  5. [React props](#react-props)
 
 ## Programming Style
 The functional programming paradigma should be applied to all front-end code.
@@ -66,4 +68,49 @@ const result = pipe(
     A.map((n) => n * 2),
     A.reduce(0, (sum, cur) => sum + cur),
 )
+```
+
+## React component
+React components should always be a function component.
+
+```typescript
+import React from 'react'
+import { Text } from 'react-native'
+
+const HelloWorld: React.FC = () => (
+        <Text>Hello, world</Text>
+)
+```
+
+## React props
+All react props should always described using a type.
+```typescript
+import React from 'react'
+import { Text } from 'react-native'
+
+type HelloProps = {
+    readonly name: string
+}
+
+const Hello: React.FC<HelloProps> = (props) => (
+        <Text>Hello, {props.name}</Text>
+)
+```
+
+When passing an entity (like a product) to a component, don't pass every property with a spread operator but pass the complete entity.
+```
+// wrong
+<ProductCard {...product} />
+
+// good
+<ProductCard product={product} />
+```
+
+When using callbacks and events, always start the property name with `on`, for example `onClick`
+```
+// wrong
+<Button click={() => {}} />
+
+// good
+<Button onClick={() => {}} />
 ```
