@@ -7,12 +7,12 @@ Install this styleguide by adding the following line to your package.json
 +  "eslint-config-webiq": "git+ssh://git@github.com/webiq/react.styleguide.git",
 }
 ```
-After installating this package you can add this config to the *extends* array:
+After installing this package you can add this config to the *extends* array:
 ```diff
 module.exports = {
     extends: [
-+        'eslint-config-webiq'
-    ]
++        'eslint-config-webiq',
+    ],
 }
 ```
 
@@ -23,6 +23,7 @@ module.exports = {
   4. [React components](#react-components)
   5. [React props](#react-props)
   6. [Selectors](#selectors)
+  7. [External data](#external-data)
 
 ## Programming Style
 The functional programming paradigma should be applied to all front-end code.
@@ -131,4 +132,22 @@ export type Selector<R> = ReselectSelector<AppState, Option<R>>
 const selector: Selector<boolean> = createSelector(
 	...
 )
+```
+
+## External data
+Data from external sources can never be trusted. Therefore one should always use the type `unknown` as type for external data (from a HTTP request for example).
+The `unknown` type can be converted to a typed object using [io-ts](https://github.com/gcanti/io-ts).
+
+```typescript
+import * as t from 'io-ts'
+
+const User = t.type({
+	email: t.string,
+	name: t.string,
+	age: t.number,
+})
+
+const data: unknown = getDataFromExternalDataSource()
+
+User.decode(data) // returns an Either with a user or an error
 ```
