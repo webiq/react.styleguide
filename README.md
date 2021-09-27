@@ -25,6 +25,8 @@ module.exports = {
   6. [Selectors](#selectors)
   7. [External data](#external-data)
   8. [Component structure](#component-structure)
+  9. [Storybook](#storybook)
+  
 
 ## Programming Style
 The functional programming paradigma should be applied to all front-end code.
@@ -166,6 +168,7 @@ project
 │       │   index.ts
 │       │   Header.tsx
 │       │   SimpleHeader.tsx
+│       │   Header.stories.tsx
 │       │   style.ts
 ```
 
@@ -178,3 +181,33 @@ export { Header, SimpleHeader }
 ```
 
 The file `style.ts` contains all styling related code.
+
+
+## Storybook
+For every react component there should always be a story be made. Always Include the story in the directory of the component.
+Remember to make a story for every variation of a component
+
+```typescript
+import React from 'react'
+// import the 2 types that storybook uses 
+import { Meta, Story } from '@storybook/react/types-6-0'
+import { Button, ButtonProps } from './Button'
+
+export default {
+    title: 'Components/button/Button',
+    component: Button,
+    argTypes: {},
+} as Meta
+
+// Set the default template for your story 
+const Template: Story<ButtonProps> = (args) => <Button {...args} />
+
+// Make a new story and pass the props the component needs 
+export const Primary = Template.bind({})
+Primary.args = {
+    children: 'Klik hier!',
+    // if there is a onClick function always make this a alert so there is a interaction
+    onClick: () => alert('Click!'),
+    color: 'green',
+}
+```
