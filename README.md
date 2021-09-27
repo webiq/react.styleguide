@@ -200,7 +200,7 @@ export default {
 } as Meta;
 
 // Set the default template for your story 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 // Make a new story and pass the props the component needs 
 export const Primary = Template.bind({});
@@ -208,6 +208,6 @@ Primary.args = {
     children: 'Klik hier!',
     // if there is a onClick function always make this a alert so there is a interaction
     onClick: () => alert('Click!'),
-    color: COLORS.PRIMARY,
+    color: "green",
 };
 ```
