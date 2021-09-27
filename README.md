@@ -206,7 +206,7 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
     children: 'Klik hier!',
-    // if there is a onClick function always make this a alert so there is a 
+    // if there is a onClick function always make this a alert so there is a interaction
     onClick: () => alert('Click!'),
     color: COLORS.PRIMARY,
 };
