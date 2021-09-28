@@ -4,7 +4,7 @@ export interface NormalizedState<T, I = Id> {
 	byId: {
 		[id: I]: T
 	}
-	allIds: I[]
+	ids: I[]
 }
 
 export interface PaginationState<I = Id> {
