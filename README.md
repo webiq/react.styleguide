@@ -17,16 +17,17 @@ module.exports = {
 ```
 
 ## Table of Contents
-  1. [Programming style](#programming-style)
-  2. [Side effects](#side-effects)
-  3. [Method chaining](#method-chaining)
-  4. [React components](#react-components)
-  5. [React props](#react-props)
-  6. [Selectors](#selectors)
-  7. [External data](#external-data)
-  8. [Component structure](#component-structure)
-  9. [Storybook](#storybook)
-  
+  1.  [Programming style](#programming-style)
+  2.  [Side effects](#side-effects)
+  3.  [Method chaining](#method-chaining)
+  4.  [React components](#react-components)
+  5.  [React props](#react-props)
+  6.  [Reducers](#reducers)
+  7.  [Selectors](#selectors)
+  8.  [External data](#external-data)
+  9.  [Component structure](#component-structure)
+  10. [Storybook](#storybook)
+
 
 ## Programming Style
 The functional programming paradigma should be applied to all front-end code.
@@ -120,6 +121,35 @@ When using callbacks and events, always start the property name with `on`, for e
 <Button onClick={() => {}} />
 ```
 
+## Reducers
+All reducers must always be a function with an arity of 2. The first argument is always the state, and the second argument is the action.
+Functions may be curried into the reducer functions to enable composability and reusability.
+
+Reducer function **must** be pure.
+
+
+```typescript
+import { NormalizedState } from 'eslint-config-webiq'
+
+import { Product, ActionTypes } from '../types'
+
+type ProductState = NormalizedState<Product>
+
+const initialState = {
+	byId: {},
+	ids: [],
+}
+
+export default function reducer(state = initialState, action: ActionTypes): ProductState {
+	switch (action.type) {
+		// reducer logic...
+
+		default:
+			return state
+	}
+}
+```
+
 ## Selectors
 Use the package [reselect](https://github.com/reduxjs/reselect) for writing selectors.
 Every selector should return an [Option](https://gcanti.github.io/fp-ts/modules/Option.ts.html).
@@ -189,7 +219,7 @@ Remember to make a story for every variation of a component
 
 ```typescript
 import React from 'react'
-// import the 2 types that storybook uses 
+// import the 2 types that storybook uses
 import { Meta, Story } from '@storybook/react/types-6-0'
 import { Button, ButtonProps } from './Button'
 
@@ -199,10 +229,10 @@ export default {
     argTypes: {},
 } as Meta
 
-// Set the default template for your story 
+// Set the default template for your story
 const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
-// Make a new story and pass the props the component needs 
+// Make a new story and pass the props the component needs
 export const Primary = Template.bind({})
 Primary.args = {
     children: 'Klik hier!',

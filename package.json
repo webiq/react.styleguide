@@ -2,7 +2,8 @@
   "name": "eslint-config-webiq",
   "version": "1.0.0",
   "description": "> **Note**: This styleguide only covers React components and Redux state management and effects.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/types.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
