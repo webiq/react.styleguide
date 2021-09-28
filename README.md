@@ -124,7 +124,7 @@ Every selector should return an [Option](https://gcanti.github.io/fp-ts/modules/
 
 Example:
 ```typescript
-import { createSelector } from 'reselect'
+import { createSelector, Selector as ReselectSelector } from 'reselect'
 import { Option } from 'fp-ts/Option'
 
 export type Selector<R> = ReselectSelector<AppState, Option<R>>
