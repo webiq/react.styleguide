@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-webiq",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "> **Note**: This styleguide only covers React components and Redux state management and effects.",
   "main": "lib/index.js",
   "types": "lib/types.d.ts",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/webiq/react.styleguide#readme",
   "dependencies": {
+    "@emotion/eslint-plugin": "^11.5.0",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-fp-ts": "^0.2.1",
