@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-webiq",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "> **Note**: This styleguide only covers React components and Redux state management and effects.",
   "main": "lib/index.js",
   "types": "lib/types.d.ts",
@@ -22,25 +22,25 @@
   },
   "homepage": "https://github.com/webiq/react.styleguide#readme",
   "dependencies": {
-    "@emotion/eslint-plugin": "^11.5.0",
-    "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-fp-ts": "^0.2.1",
-    "eslint-plugin-functional": "^3.7.0",
-    "eslint-plugin-jest": "^24.4.0",
-    "eslint-plugin-markdown": "^2.2.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-react-native": "^3.11.0"
+    "@emotion/eslint-plugin": "^11.10.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-fp-ts": "^0.3.2",
+    "eslint-plugin-functional": "^4.2.2",
+    "eslint-plugin-jest": "^27.0.2",
+    "eslint-plugin-markdown": "^3.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.7",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-native": "^4.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^4.32.0",
-    "eslint": "^7.32.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1",
-    "typescript": "^4.4.3"
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
